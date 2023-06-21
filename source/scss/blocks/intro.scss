@@ -115,6 +115,8 @@
 
   p {
     margin: 0;
+    opacity: 0;
+    transform: translateY(80px);
   }
 
   svg {
@@ -161,4 +163,9 @@
     margin: 0 0 0 -5px;
     font-size: 48px;
   }
+}
+
+.is-active p {
+  opacity: 1;
+  transform: translateY(0);
 }

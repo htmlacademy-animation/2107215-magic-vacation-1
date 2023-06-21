@@ -43,6 +43,8 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  transform: translateX(100%);
+  opacity: 0;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -145,4 +147,9 @@
       width: calc(100% - 5rem);
     }
   }
+}
+
+.active .form__field {
+  transform: translateX(0);
+  opacity: 1;
 }
