@@ -21,3 +21,13 @@
     opacity: 1;
   }
 }
+
+@keyframes color-form-btn {
+  from {
+    color: #ffffff;
+  }
+
+  to {
+    color: $c-dark;
+  }
+}
