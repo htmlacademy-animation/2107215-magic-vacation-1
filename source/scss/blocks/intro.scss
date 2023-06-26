@@ -32,6 +32,13 @@
   font-size: 12rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  opacity: 0;
+
+  & span {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 
   @media (min-width: $stop-scaling) {
     max-width: 990px;
@@ -138,6 +145,7 @@
 }
 
 .intro__label {
+  opacity: 0;
   margin: 0 0 1.6rem;
   max-width: 25rem;
   text-transform: uppercase;
@@ -158,6 +166,8 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  opacity: 0;
+  transform: translateY(10px);
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;
@@ -166,6 +176,43 @@
 }
 
 .is-active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro__title-word {
+  display: inline-flex;
+
+  &:last-child {
+    opacity: 0;
+  }
+
+  & span {
+    transform: translateY(50px);
+  }
+}
+
+.is-active {
+  & .intro__title-word {
+    &:last-child {
+      opacity: 1;
+    }
+
+    & span {
+      transform: translateY(0);
+    }
+  }
+
+  & .intro__title {
+    opacity: 1;
+  }
+}
+
+.is-active .intro__label {
+  opacity: 1;
+}
+
+.is-active .intro__date {
   opacity: 1;
   transform: translateY(0);
 }
