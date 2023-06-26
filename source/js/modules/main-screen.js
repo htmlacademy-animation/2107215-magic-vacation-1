@@ -6,9 +6,6 @@ export default () => {
     let intro = document.querySelector(`.intro`);
     let text = document.querySelector(`.intro__message p`);
     let menuLinks = document.querySelectorAll(`.js-menu a`);
-    let pageLogo = document.querySelector(`.is-load .page-header__logo`);
-    pageLogo.style.opacity = `1`;
-    pageLogo.style.transform = `translateX(0)`;
 
     if (intro && menuLinks) {
       setTimeout(() => {

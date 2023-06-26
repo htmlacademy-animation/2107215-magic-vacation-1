@@ -20,7 +20,6 @@
 }
 
 .page-header__wrapper {
-  // opacity: 0;
   @include container;
   display: flex;
   align-items: center;
@@ -38,7 +37,6 @@
   color: $c-light;
   opacity: 0;
   transform: translateX(-40px);
-  transition: all 300ms ease;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -314,8 +312,15 @@
   }
 }
 
-.is-load .page-header__menu {
-  opacity: 1;
+.is-load {
+  & .page-header__menu {
+    opacity: 1;
+  }
+
+  & .page-header__logo {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .is-load .js-menu-link {
