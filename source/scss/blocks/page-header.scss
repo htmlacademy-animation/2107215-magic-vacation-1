@@ -35,6 +35,8 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translateX(-40px);
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -171,6 +173,7 @@
 }
 
 .page-header__menu {
+  opacity: 0;
   font-family: $font-alt;
   text-transform: uppercase;
   font-weight: 400;
@@ -266,7 +269,7 @@
 
     &.active {
       &::after {
-        width: 100%;
+        width: 0;
       }
     }
 
@@ -306,5 +309,25 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-left: 0;
     width: 100%;
+  }
+}
+
+.is-load {
+  & .page-header__menu {
+    opacity: 1;
+  }
+
+  & .page-header__logo {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.is-load .js-menu-link {
+  &.active {
+    &::after {
+      left: 0;
+      width: 100%;
+    }
   }
 }

@@ -287,3 +287,11 @@
     }
   }
 }
+
+.active {
+  & .slider__item-title {
+    & span {
+      transform: translateY(0);
+    }
+  }
+}
