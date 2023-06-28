@@ -369,7 +369,7 @@
   transform: translateY(0);
 }
 
-.screen__overlay {
+.screen-overlay {
   background-color: $c-dark;
   position: absolute;
   bottom: 0;
@@ -378,7 +378,7 @@
   z-index: 1;
 }
 
-.screen__overlay--active {
+.screen-overlay--active {
   height: 0;
 }
 

@@ -1,6 +1,6 @@
 export default () => {
   const menu = document.querySelector(`.js-menu`);
-  const screenOverlay = document.querySelector(`.screen__overlay`);
+  const screenOverlay = document.querySelector(`.screen-overlay`);
   const screenPrizes = document.querySelector(`.screen--prizes`);
   const screenStory = document.querySelector(`.screen--story`);
   const dataStory = document.querySelector(`[data-href='story']`);
@@ -36,7 +36,7 @@ export default () => {
       }
 
       if (dataHref === `story`) {
-        screenOverlay.classList.remove(`screen__overlay--active`);
+        screenOverlay.classList.remove(`screen-overlay--active`);
         flag = true;
         screenPrizes.style.backgroundColor = `transparent`;
         screenPrizes.style.transition = `opacity .1s ease 1s`;
@@ -44,7 +44,7 @@ export default () => {
       }
 
       if (dataHref !== `prizes` && dataHref !== `story`) {
-        screenOverlay.classList.remove(`screen__overlay--active`);
+        screenOverlay.classList.remove(`screen-overlay--active`);
         screenPrizes.style.opacity = `1`;
         flag = false;
       }
@@ -52,7 +52,7 @@ export default () => {
       if (dataHref === `prizes`) {
         if (flag === true) {
           sliderItemTitle.style.opacity = `1`;
-          screenOverlay.classList.add(`screen__overlay--active`);
+          screenOverlay.classList.add(`screen-overlay--active`);
           setTimeout(() => {
             screenPrizes.style.backgroundColor = `#5f458c`;
             screenPrizes.style.transition = `none`;
