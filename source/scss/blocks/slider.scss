@@ -13,7 +13,6 @@
   }
 }
 
-
 .slider__item {
   display: flex;
   flex-direction: column;
@@ -80,10 +79,6 @@
   letter-spacing: -0.04em;
   opacity: 0;
   display: flex;
-
-  & span {
-    transform: translateY(2px);
-  }
 
   @media (min-width: $stop-scaling) {
     margin-left: -55px;
@@ -288,10 +283,3 @@
   }
 }
 
-.active {
-  & .slider__item-title {
-    & span {
-      transform: translateY(0);
-    }
-  }
-}

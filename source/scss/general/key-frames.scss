@@ -45,3 +45,25 @@
     transform: scale(1);
   }
 }
+
+@keyframes height-screen {
+  from {
+    z-index: 6;
+    height: 0;
+  }
+
+  to {
+    z-index: 6;
+    height: 100vh;
+  }
+}
+
+@keyframes height-index-screen {
+  from {
+    z-index: 6;
+  }
+
+  to {
+    z-index: 3;
+  }
+}

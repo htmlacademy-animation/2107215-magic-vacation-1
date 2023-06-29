@@ -1,11 +1,11 @@
 export default () => {
-  let body = document.getElementById(`body`);
+  const body = document.getElementById(`body`);
   body.classList.add(`is-load`);
 
   if (body.classList.contains(`is-load`)) {
-    let intro = document.querySelector(`.intro`);
-    let text = document.querySelector(`.intro__message p`);
-    let menuLinks = document.querySelectorAll(`.js-menu a`);
+    const intro = document.querySelector(`.intro`);
+    const text = document.querySelector(`.intro__message p`);
+    const menuLinks = document.querySelectorAll(`.js-menu a`);
 
     if (intro && menuLinks) {
       setTimeout(() => {
