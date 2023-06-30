@@ -136,3 +136,33 @@
 .screen-overlay--active {
   animation: height-screen 0.4s ease forwards, height-index-screen 0.1s ease forwards 0.4s;
 }
+
+.rules__item {
+  & p {
+    animation: move-rules-text 0.4s ease both;
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      & p {
+        animation-delay: $i * 180ms;
+      }
+    }
+  }
+
+  &::before {
+    transition: transform 200ms cubic-bezier(0.17, 0.67, 0.59, 1.51);
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      &::before {
+        transition-delay: $i * 140ms;
+      }
+    }
+  }
+}
+
+.rules__link {
+  animation: show-button-rules 0.3s ease-in-out both 0.8s;
+}

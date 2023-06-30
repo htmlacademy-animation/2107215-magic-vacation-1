@@ -148,6 +148,7 @@
     content: counter(li);
     counter-increment: li;
     position: absolute;
+    transform: scale(0);
     top: 0;
     left: 0;
     width: 4.5rem;
@@ -197,17 +198,23 @@
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
-    left: 0;
     right: 0;
     bottom: 4rem;
   }
 
   @media (max-width: $tablet) and (orientation: landscape) {
+    right: 0;
     bottom: 5rem;
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+}
+
+.active .rules__item {
+  &::before {
+    transform: scale(1);
   }
 }
