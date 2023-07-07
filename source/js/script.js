@@ -8,8 +8,9 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
-import mainScreen from './modules/main-screen';
+import screenLoad from './modules/screen-load';
 import screenFill from './modules/screen-fill';
+import textAnimation from './modules/text-animation';
 
 // init modules
 mobileHeight();
@@ -20,11 +21,12 @@ chat();
 result();
 form();
 social();
+textAnimation();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
 window.addEventListener(`load`, () => {
-  mainScreen();
+  screenLoad();
   screenFill();
 });

@@ -1,3 +1,12 @@
+.game__text,
+.prizes__text,
+.rules__text,
+.intro__text-date,
+.intro__text,
+.slider__text {
+  overflow: hidden;
+}
+
 .page-header__menu {
   transition: all 0.4s cubic-bezier(0.36, 0.06, 0.12, 1.04) 200ms;
 
@@ -46,53 +55,13 @@
   transition-delay: 300ms;
 }
 
-.intro__title {
-  transition: all 100ms ease-out 400ms;
-}
-
 .intro__label {
-  transition: all 300ms ease-in-out 1.3s;
+  transition: all 500ms ease-in-out 1.7s;
 }
 
-.intro__date {
-  transition: all 300ms ease 1.2s;
-}
 
-.intro__title-word {
-  & span {
-    transition: all 500ms ease 400ms;
-
-    &:nth-child(1) {
-      transition-delay: 450ms;
-    }
-
-    &:nth-child(2),
-    &:nth-child(4),
-    &:nth-child(6) {
-      transition-delay: 350ms;
-    }
-
-    &:nth-child(3),
-    &:nth-child(7),
-    &:nth-child(10),
-    &:nth-child(12) {
-      transition-delay: 100ms;
-    }
-
-    &:nth-child(5),
-    &:nth-child(9),
-    &:nth-child(11) {
-      transition-delay: 470ms;
-    }
-
-    &:nth-child(8) {
-      transition-delay: 500ms;
-    }
-  }
-}
-
-.intro__title-word:last-child {
-  transition: all 500ms ease 700ms;
+.intro__message p {
+  transition: all 300ms ease 1s;
 }
 
 .social-block__toggler {
@@ -115,10 +84,6 @@
       animation: move-text 0.5s 1 forwards ease 350ms;
     }
   }
-
-  & .slider__item-title {
-    animation: move-title 300ms 1 forwards linear;
-  }
 }
 
 .form__field {
@@ -139,13 +104,13 @@
 
 .rules__item {
   & p {
-    animation: move-rules-text 0.4s ease both;
+    transition: all 0.4s ease 400ms;
   }
 
   @for $i from 1 through 4 {
     &:nth-child(#{$i}) {
       & p {
-        animation-delay: $i * 180ms;
+        transition-delay: $i * 180ms;
       }
     }
   }
@@ -164,5 +129,11 @@
 }
 
 .rules__link {
-  animation: show-button-rules 0.3s ease-in-out both 0.8s;
+  animation: show-button-rules 0.3s ease-in-out both 1.2s;
+}
+
+.rules__lead {
+  & p {
+    transition: all 300ms ease 0.5s;
+  }
 }
