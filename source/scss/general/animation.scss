@@ -1,177 +1,175 @@
 @media (prefers-reduced-motion: no-preference) {
-
-.game__text,
-.prizes__text,
-.rules__text,
-.intro__text-date,
-.intro__text,
-.slider__text {
-  overflow: hidden;
-}
-
-.page-header__menu {
-  transition: all 0.4s cubic-bezier(0.36, 0.06, 0.12, 1.04) 200ms;
-
-  & a {
-    &::after {
-      transition: width 0.2s ease;
-    }
-  }
-}
-
-.page-header__logo {
-  transition: all 100ms cubic-bezier(0.36, 0.06, 0.12, 1.04) 100ms;
-}
-
-.screen__footer {
-  transition: all 300ms cubic-bezier(0.36, 0.06, 0.12, 1.04);
-}
-
-.social-block__list li {
-  transition: all 0.2s ease;
-}
-
-.social-block__list li:nth-child(1) {
-  transition-delay: 100ms;
-}
-
-.social-block__list li:nth-child(2) {
-  transition-delay: 200ms;
-}
-
-.social-block__list li:nth-child(3) {
-  transition-delay: 300ms;
-}
-
-.intro__label {
-  transition: all 500ms ease-in-out 1.6s;
-}
-
-
-.intro__message p {
-  transition: all 300ms ease 1s;
-}
-
-.social-block__toggler {
-  transition: opacity 100ms cubic-bezier(0.09, 0.82, 0.44, 0.89) 300ms;
-
-  &::before {
-    animation: width-togle 200ms 1 forwards cubic-bezier(0.14, 0.22, 0.29, 1.06) 300ms;
-  }
-}
-
-.active {
-  & .swiper-slide-active {
-    & .slider__item-text {
-      animation: move-text 0.5s 1 forwards ease 200ms;
-    }
+  .game__text,
+  .prizes__text,
+  .rules__text,
+  .intro__text-date,
+  .intro__text,
+  .slider__text {
+    overflow: hidden;
   }
 
-  & .swiper-slide-next {
-    & .slider__item-text {
-      animation: move-text 0.5s 1 forwards ease 350ms;
-    }
-  }
-}
+  .page-header__menu {
+    transition: all 0.4s cubic-bezier(0.36, 0.06, 0.12, 1.04) 200ms;
 
-.form__field {
-  transition: all 400ms ease;
-
-  &::placeholder {
-    transition: all 300ms ease 400ms;
-  }
-}
-
-.form__button {
-  animation: color-form-btn 300ms 1 forwards linear 400ms;
-}
-
-.screen-overlay--active {
-  animation: height-screen 0.4s ease forwards, height-index-screen 0.1s ease forwards 0.4s;
-}
-
-.rules__item {
-  & p {
-    transition: all 0.4s ease 400ms;
-  }
-
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}) {
-      & p {
-        transition-delay: $i * 180ms;
+    & a {
+      &::after {
+        transition: width 0.2s ease;
       }
     }
   }
 
-  &::before {
-    transition: transform 200ms cubic-bezier(0.17, 0.67, 0.59, 1.51);
+  .page-header__logo {
+    transition: all 100ms cubic-bezier(0.36, 0.06, 0.12, 1.04) 100ms;
   }
 
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}) {
-      &::before {
-        transition-delay: $i * 140ms;
+  .screen__footer {
+    transition: all 300ms cubic-bezier(0.36, 0.06, 0.12, 1.04);
+  }
+
+  .social-block__list li {
+    transition: all 0.2s ease;
+  }
+
+  .social-block__list li:nth-child(1) {
+    transition-delay: 100ms;
+  }
+
+  .social-block__list li:nth-child(2) {
+    transition-delay: 200ms;
+  }
+
+  .social-block__list li:nth-child(3) {
+    transition-delay: 300ms;
+  }
+
+  .intro__label {
+    transition: all 500ms ease-in-out 1.6s;
+  }
+
+
+  .intro__message p {
+    transition: all 300ms ease 1s;
+  }
+
+  .social-block__toggler {
+    transition: opacity 100ms cubic-bezier(0.09, 0.82, 0.44, 0.89) 300ms;
+
+    &::before {
+      animation: width-togle 200ms 1 forwards cubic-bezier(0.14, 0.22, 0.29, 1.06) 300ms;
+    }
+  }
+
+  .active {
+    & .swiper-slide-active {
+      & .slider__item-text {
+        animation: move-text 0.5s 1 forwards ease 200ms;
+      }
+    }
+
+    & .swiper-slide-next {
+      & .slider__item-text {
+        animation: move-text 0.5s 1 forwards ease 350ms;
       }
     }
   }
-}
 
-.rules__link {
-  animation: show-button-rules 0.3s ease-in-out both 1.2s;
-}
+  .form__field {
+    transition: all 400ms ease;
 
-.rules__lead {
-  & p {
-    transition: all 300ms cubic-bezier(.26,.77,.41,.94) 0.5s;
+    &::placeholder {
+      transition: all 300ms ease 400ms;
+    }
   }
-}
 
-.prizes__lead {
-  & p {
-    transition: all 350ms cubic-bezier(.26,.77,.41,.94) 0.4s;
+  .activate-form .form__field {
+    &::placeholder {
+      transition: all 300ms ease 1150ms;
+    }
   }
-}
 
-.result__image-flamingo {
-  & img {
-    animation: result-flamingo 400ms ease both;
+  .form__button {
+    animation: color-form-btn 300ms 1 forwards linear 400ms;
   }
-}
 
-.result__image-flamingo {
-  & img {
-    animation: result-flamingo 500ms cubic-bezier(.28,.56,.05,.99) both 100ms, result__flamingo-move 2200ms ease-in infinite 500ms;
+  .screen-overlay--active {
+    animation: height-screen 0.4s ease forwards, height-index-screen 0.1s ease forwards 0.4s;
   }
-}
 
-.result__image-suitcase {
-  & img {
-    animation: result-suitcase 600ms cubic-bezier(.49,.06,.26,.94) both;
+  .rules__item {
+    & p {
+      transition: all 0.4s ease 400ms;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        & p {
+          transition-delay: $i * 180ms;
+        }
+      }
+    }
+
+    &::before {
+      transition: transform 200ms cubic-bezier(0.17, 0.67, 0.59, 1.51);
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        &::before {
+          transition-delay: $i * 140ms;
+        }
+      }
+    }
   }
-}
 
-.result__image-leaf-right {
-  & img {
-    animation: result-leaf-right 1900ms cubic-bezier(0.4, 0.0, 0.2, 1) both 150ms;
+  .rules__link {
+    animation: show-button-rules 0.3s ease-in-out both 1.2s;
   }
-}
 
+  .rules__lead {
+    & p {
+      transition: all 300ms cubic-bezier(0.26, 0.77, 0.41, 0.94) 0.5s;
+    }
+  }
+
+  .prizes__lead {
+    & p {
+      transition: all 350ms cubic-bezier(0.26, 0.77, 0.41, 0.94) 0.4s;
+    }
+  }
+
+  .result__image-flamingo {
+    & img {
+      animation: result-flamingo 500ms cubic-bezier(0.28, 0.56, 0.05, 0.99) both 100ms, result__flamingo-move 2200ms ease-in infinite 500ms;
+    }
+  }
+
+  .result__image-suitcase {
+    & img {
+      animation: result-suitcase 600ms cubic-bezier(0.49, 0.06, 0.26, 0.94) both;
+    }
+  }
+
+  .result__image-leaf-right {
+    & img {
+      animation: result-leaf-right 1900ms cubic-bezier(0.4, 0, 0.2, 1) both 150ms;
+    }
+  }
 
   .result__image-leaf-left {
     & img {
-      animation: result-leaf-left 2100ms cubic-bezier(0.4, 0.0, 0.2, 1) both 150ms;
+      animation: result-leaf-left 2100ms cubic-bezier(0.4, 0, 0.2, 1) both 150ms;
     }
   }
 
   .result__image-leaf-green {
     & img {
-      animation: result__image-leaf-green 1900ms cubic-bezier(0.4, 0.0, 0.2, 1) both 450ms;
+      animation: result__image-leaf-green 1900ms cubic-bezier(0.4, 0, 0.2, 1) both 450ms;
     }
   }
 
   .activate-form .form--result {
     .form__field {
-      transition: all 600ms ease 700ms;
+      transition: all 600ms ease 701ms, opacity 1ms ease 700ms;
     }
   }
 
