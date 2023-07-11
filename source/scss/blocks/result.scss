@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 15rem 5.7rem 6rem;
   width: 100%;
+  position: relative;
 
   @media (min-width: $stop-scaling) {
     padding: 150px 57px 60px;
@@ -24,39 +25,37 @@
 
 .result__image {
   position: absolute;
-  top: 0;
+  bottom: 12rem;
   left: 0;
   right: 0;
-  bottom: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: -1;
+
+  @media (min-width: $stop-scaling) {
+    bottom: 8rem;
+  }
 
   @media (orientation: portrait) {
     left: -1rem;
     right: -1rem;
   }
 
-  picture {
-    display: block;
-    width: 100%;
-    height: 100%;
+  @media (max-width: $tablet) and (orientation: landscape) {
+    bottom: 9rem;
   }
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  @media (max-width: $mobile)and (orientation: portrait) {
+    bottom: 12rem;
   }
 }
 
 .result__title {
   margin: 0 auto 2rem;
   color: $c-light;
+  z-index: 20;
 
   @media (min-width: $stop-scaling) {
     margin: 0 auto 20px;
@@ -99,7 +98,9 @@
   }
 
   p {
+    position: relative;
     margin: 0;
+    z-index: 20;
   }
 }
 
@@ -267,4 +268,56 @@
       width: 45rem;
     }
   }
+}
+
+.result__image-flamingo,
+.result__image-leaf-right,
+.result__image-leaf-left,
+.result__image-suitcase,
+.result__image-leaf-green {
+  height: auto;
+  left: 50%;
+  position: absolute;
+  max-width: 340px;
+  width: 40%;
+  bottom: 0;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.result__image-flamingo {
+  max-width: 330px;
+  width: 32%;
+  z-index: 5;
+  transform: translate(-90%, 5%);
+}
+
+.result__image-leaf-right {
+  width: 35%;
+  max-width: 360px;
+  z-index: 3;
+  transform: translate(-1%, -24%);
+}
+
+.result__image-leaf-left {
+  max-width: 360px;
+  width: 35%;
+  z-index: 3;
+  transform: translate(-123%, 6%);
+}
+
+.result__image-suitcase {
+  max-width: 430px;
+  z-index: 4;
+  width: 42%;
+  transform: translate(-60%, 4%);
+}
+
+.result__image-leaf-green {
+  z-index: 4;
+  max-width: 400px;
+  transform: translate(-4%, -25%);
 }

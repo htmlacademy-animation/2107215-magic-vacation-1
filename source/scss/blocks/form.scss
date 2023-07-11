@@ -140,22 +140,56 @@
 
 .form--result {
   .form__field {
-    width: calc(100% - 31rem);
+    width: 0;
+    padding: 0;
+    z-index: 20;
+    @media (min-width: 1024px) {
+      right: 25rem;
+    }
 
     @media (min-width: $stop-scaling) {
-      width: calc(100% - 310px);
+      right: 20rem;
+    }
+
+  }
+}
+
+.form--result .form__button {
+  display: flex;
+  justify-content: center;
+  @media (min-width: 1024px) {
+    width: 20%;
+  }
+
+  @media (min-width: $stop-scaling) {
+    width: 15%;
+  }
+}
+
+.activate-form .form--result {
+  .form__field {
+    @media (min-width: 1024px) {
+      padding: 1rem 5.6rem;
+      width: calc(100% - 28rem);
+    }
+
+    @media (min-width: $stop-scaling) {
+      width: calc(100% - 320px);
     }
 
     @media (orientation: portrait) {
       width: calc(100% - 5rem);
+      margin: 0 0 0 1rem;
     }
 
     @media (max-width: $tablet) and (orientation: landscape) {
       width: calc(100% - 9rem);
+      margin: 0 0 0 4rem;
     }
 
     @media (max-width: $mobile) and (orientation: landscape) {
       width: calc(100% - 5rem);
+      margin: 0 0 0 1rem;
     }
   }
 }
