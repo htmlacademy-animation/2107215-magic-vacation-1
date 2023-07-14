@@ -32,7 +32,6 @@
   font-size: 12rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
-  opacity: 0;
 
   & span {
     font-weight: inherit;
@@ -122,8 +121,10 @@
 
   p {
     margin: 0;
+    // opacity: 0;
+    // transform: translateY(80px);
+    transform: translate3d(0, 50px, 0);
     opacity: 0;
-    transform: translateY(80px);
   }
 
   svg {
@@ -166,7 +167,8 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
-  opacity: 0;
+  display: flex;
+  column-gap: 6px;
   transform: translateY(10px);
 
   @media (min-width: $stop-scaling) {
@@ -175,44 +177,31 @@
   }
 }
 
-.is-active p {
+.active .intro__label {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.intro__title-word {
-  display: inline-flex;
+.active .intro__message p {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
 
-  &:last-child {
-    opacity: 0;
-  }
+.intro__text {
+  height: 13rem;
 
   & span {
-    transform: translateY(50px);
-  }
-}
-
-.is-active {
-  & .intro__title-word {
-    &:last-child {
-      opacity: 1;
-    }
-
-    & span {
-      transform: translateY(0);
-    }
+    align-self: flex-end;
   }
 
-  & .intro__title {
-    opacity: 1;
+  @media (min-width: $stop-scaling) {
+    height: 10rem;
   }
-}
 
-.is-active .intro__label {
-  opacity: 1;
-}
+  @media (max-width: $tablet) and (orientation: portrait) {
+    height: 4.5rem;
+  }
 
-.is-active .intro__date {
-  opacity: 1;
-  transform: translateY(0);
+  @media (max-width: $mobile) and (orientation: landscape) {
+    height: 4.5rem;
+  }
 }
