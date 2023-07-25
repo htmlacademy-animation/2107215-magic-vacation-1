@@ -160,6 +160,7 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -191,7 +192,7 @@
   }
 
   &:hover {
-    color: $c-purple;
+    // color: $c-purple;
 
     &::before {
       width: 112.5%;
@@ -200,12 +201,12 @@
   }
 
   &:focus {
-    color: $c-purple;
+    // color: $c-purple;
     outline: none;
 
-    &::before {
-      border-color: $c-purple;
-    }
+    // &::before {
+    //   border-color: $c-purple;
+    // }
   }
 
   &:active,
@@ -215,13 +216,49 @@
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      // background-color: $c-purple;
+      // border-color: $c-purple;
+    }
+  }
+
+  .active-slider-1 & {
+    color: $c-purple;
+
+    &:hover,
+    &:active:focus {
+      color: $c-dark;
+    }
+  }
+
+  .active-slider-2 & {
+    color: $c-royal-blue;
+    &:hover,
+    &:active:focus {
+      color: $c-anakiwa;
+    }
+  }
+
+  .active-slider-3 & {
+    color: $c-cornflower;
+
+    &:hover,
+    &:active:focus {
+      color: $c-royal-blue;
+    }
+  }
+
+  .active-slider-4 &,
+  .active-slider & {
+    color: $c-dark;
+
+    &:hover,
+    &:active:focus {
+      color: $c-purple;
     }
   }
 
   &.swiper-button-disabled {
-    opacity: 0.5;
+    // opacity: 0.5;
     pointer-events: none;
   }
 }
@@ -238,6 +275,7 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;

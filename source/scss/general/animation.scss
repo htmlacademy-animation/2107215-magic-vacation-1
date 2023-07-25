@@ -176,4 +176,19 @@
   .form--result .form__button {
     animation: form-btn-result 300ms 1 both linear 600ms;
   }
+
+  .active {
+    & .slider__control--next {
+      animation: move-btn-story-right 400ms 1 both cubic-bezier(0.17, 0.67, 0.35, 0.91) 600ms;
+    }
+
+    & .slider__control--prev {
+      animation: move-btn-story-left 400ms 1 both cubic-bezier(0.17, 0.67, 0.35, 0.91) 600ms;
+    }
+
+    & .slider__pagination {
+      animation: appear-pagination 200ms 1 both ease-out 600ms;
+    }
+
+  }
 }

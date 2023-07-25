@@ -11,6 +11,7 @@ import FullPageScroll from './modules/full-page-scroll';
 import screenLoad from './modules/screen-load';
 import screenFill from './modules/screen-fill';
 import textAnimation from './modules/text-animation';
+import story from './modules/story.js';
 
 // init modules
 mobileHeight();
@@ -22,6 +23,7 @@ result();
 form();
 social();
 textAnimation();
+story();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();

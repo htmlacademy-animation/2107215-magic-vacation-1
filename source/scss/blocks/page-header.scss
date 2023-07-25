@@ -269,13 +269,11 @@
 
     &:hover,
     &:focus {
-      color: $c-purple;
       outline: none;
 
       &::after,
       &::before {
         opacity: 1;
-        background-color: $c-purple;
       }
     }
 
@@ -283,6 +281,63 @@
       &::after {
         left: 0;
         width: 100%;
+      }
+    }
+  }
+
+  .active-slider-1 & {
+    a {
+      &:hover,
+      &:focus {
+        color: $c-dark;
+
+        &::after,
+        &::before {
+          background-color: $c-dark;
+        }
+      }
+    }
+  }
+
+  .active-slider-2 & {
+    a {
+      &:hover,
+      &:focus {
+        color: $c-anakiwa;
+
+        &::after,
+        &::before {
+          background-color: $c-anakiwa;
+        }
+      }
+    }
+  }
+
+  .active-slider-3 & {
+    a {
+      &:hover,
+      &:focus {
+        color: $c-royal-blue;
+
+        &::after,
+        &::before {
+          background-color: $c-royal-blue;
+        }
+      }
+    }
+  }
+
+  .active-slider-4 &,
+  .active-slider & {
+    a {
+      &:hover,
+      &:focus {
+        color: $c-purple;
+
+        &::after,
+        &::before {
+          background-color: $c-purple;
+        }
       }
     }
   }

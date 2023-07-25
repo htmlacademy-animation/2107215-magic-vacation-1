@@ -368,3 +368,37 @@
   }
 }
 
+@keyframes move-btn-story-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(9rem, 0, 0) rotate(190deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0) rotate(0);
+  }
+}
+
+@keyframes move-btn-story-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-9rem, 0, 0) rotate(-190deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0) rotate(0);
+  }
+}
+
+@keyframes appear-pagination {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
