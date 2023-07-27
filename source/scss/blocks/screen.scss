@@ -385,3 +385,13 @@
 .screen--prizes.active {
   opacity: 1;
 }
+
+ @media (max-width: $tablet) and (orientation: portrait) {
+  .screen__footer {
+    opacity: 0;
+  }
+
+  .screen__footer--full .screen__footer-wrapper {
+    opacity: 1;
+  }
+ }

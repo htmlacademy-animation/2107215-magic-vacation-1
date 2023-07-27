@@ -86,6 +86,9 @@ export default () => {
         keyboard: {
           enabled: true
         },
+        zoom: {
+          maxRatio: 5,
+        },
         on: {
           slideChange: () => {
             toggleMenu();
@@ -101,7 +104,7 @@ export default () => {
           },
           resize: () => {
             storySlider.update();
-          }
+          },
         },
         observer: true,
         observeParents: true
