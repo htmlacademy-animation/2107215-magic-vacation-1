@@ -2,43 +2,43 @@ import Swiper from "swiper";
 
 export default () => {
   let storySlider;
-  const body = document.querySelector('body');
+  const body = document.querySelector(`body`);
   const sliderContainer = document.getElementById(`story`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
   const toggleMenu = () => {
     if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
-      if (!body.classList.contains('active-slider-1')) {
-        body.classList.add('active-slider-1')
+      if (!body.classList.contains(`active-slider-1`)) {
+        body.classList.add(`active-slider-1`);
       }
     } else {
-      body.classList.remove('active-slider-1')
+      body.classList.remove(`active-slider-1`);
     }
 
     if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
-      if (!body.classList.contains('active-slider-2')) {
-        body.classList.add('active-slider-2')
+      if (!body.classList.contains(`active-slider-2`)) {
+        body.classList.add(`active-slider-2`);
       }
     } else {
-      body.classList.remove('active-slider-2')
+      body.classList.remove(`active-slider-2`);
     }
 
     if (storySlider.activeIndex === 4 || storySlider.activeIndex === 5) {
-      if (!body.classList.contains('active-slider-3')) {
-        body.classList.add('active-slider-3')
+      if (!body.classList.contains(`active-slider-3`)) {
+        body.classList.add(`active-slider-3`);
       }
     } else {
-      body.classList.remove('active-slider-3')
+      body.classList.remove(`active-slider-3`);
     }
 
     if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
-      if (!body.classList.contains('active-slider-4')) {
-        body.classList.add('active-slider-4')
+      if (!body.classList.contains(`active-slider-4`)) {
+        body.classList.add(`active-slider-4`);
       }
     } else {
-      body.classList.remove('active-slider-4')
+      body.classList.remove(`active-slider-4`);
     }
-  }
+  };
 
   const setSlider = function () {
 

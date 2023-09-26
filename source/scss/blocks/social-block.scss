@@ -30,6 +30,7 @@
 
     &:focus {
       color: $c-dark;
+
       &::before {
         border-color: $c-dark;
       }
@@ -49,6 +50,7 @@
 
     &:focus {
       color: $c-anakiwa;
+
       &::before {
         border-color: $c-anakiwa;
       }
@@ -68,6 +70,7 @@
 
     &:focus {
       color: $c-royal-blue;
+
       &::before {
         border-color: $c-royal-blue;
       }
@@ -88,6 +91,7 @@
 
     &:focus {
       color: $c-purple;
+
       &::before {
         border-color: $c-purple;
       }
@@ -101,10 +105,6 @@
       }
     }
   }
-
-  // &:hover {
-  //   color: $c-purple;
-  // }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -165,12 +165,7 @@
   }
 
   &:focus {
-    // color: $c-purple;
     outline: none;
-
-    // &::before {
-    //   border-color: $c-purple;
-    // }
 
     & + .social-block__list {
       opacity: 1;
@@ -187,8 +182,6 @@
       top: 0;
       width: 100%;
       height: 100%;
-      // background-color: $c-purple;
-      // border-color: $c-purple;
     }
   }
 }
@@ -339,7 +332,7 @@
 
     &:focus {
       color: $c-purple;
-      border-color:$c-purple;
+      border-color: $c-purple;
     }
 
     &:active,

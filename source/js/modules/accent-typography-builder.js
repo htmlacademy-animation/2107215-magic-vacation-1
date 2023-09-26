@@ -37,11 +37,11 @@ export default class AccentTypographyBuild {
     return span;
   }
 
-  prePareText() {
+  prepareText() {
     if (!this._element) {
       return;
     }
-    const text = this._element.textContent.trim().split(` `).filter((latter)=>latter !== ``);
+    const text = this._element.textContent.trim().split(` `);
     const content = text.reduce((fragmentParent, word) => {
       const wordElement = Array.from(word).reduce((fragment, latter, index) => {
         fragment.appendChild(this.createElement(latter, index));

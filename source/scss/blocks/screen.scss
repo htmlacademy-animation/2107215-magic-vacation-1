@@ -10,11 +10,13 @@
   overflow: hidden;
 
   &--hidden {
+    display: none;
     z-index: 0;
   }
 
-  &--hidden:not(.screen--story) {
-    display: none;
+  &.screen--hidden-rules {
+    background-color: transparent;
+    z-index: 9;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -24,6 +26,29 @@
   @media (max-width: $tablet) and (orientation: landscape) {
     height: 100vh;
   }
+}
+
+.active-prizes.screen--hidden {
+  display: flex;
+  z-index: 5;
+}
+
+.active-story.screen--hidden {
+  display: flex;
+  z-index: 5;
+}
+
+.active-rule.screen--hidden {
+  display: flex;
+  z-index: 5;
+}
+
+.screen .screen__wrapper {
+  opacity: 1;
+}
+
+.screen--hidden .screen__wrapper {
+  opacity: 0;
 }
 
 .screen__wrapper {
@@ -52,9 +77,8 @@
   right: 0;
   color: $c-dark;
   background-color: $c-light;
-  z-index: 1;
-  opacity: 0;
-  transform: translateY(50px);
+  z-index: 200;
+  opacity: 1;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -214,6 +238,7 @@
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.2;
+  opacity: 1;
 
   @media (min-width: $stop-scaling) {
     padding: 8px 0;
@@ -310,8 +335,8 @@
   }
 }
 
-.screen--prizes {
-  background-color: transparent;
+.screen--prizes .screen__wrapper {
+  opacity: 1;
 }
 
 .screen--game {
@@ -362,11 +387,16 @@
 
 .screen--rules {
   background-color: $c-dark;
+
+  & ul {
+    opacity: 0;
+  }
 }
 
-.is-load .screen__footer {
-  opacity: 1;
-  transform: translateY(0);
+.screen--rules.screen--hidden {
+  & ul {
+    opacity: 1;
+  }
 }
 
 .screen-overlay {
@@ -382,16 +412,16 @@
   height: 0;
 }
 
-.screen--prizes.active {
-  opacity: 1;
+.screen--prizes.screen--hidden .screen__wrapper {
+  opacity: 0;
 }
 
- @media (max-width: $tablet) and (orientation: portrait) {
-  .screen__footer {
-    opacity: 0;
-  }
+.screen--prizes.screen--hidden .screen__footer-note {
+  opacity: 0;
+}
 
+@media (max-width: $tablet) and (orientation: portrait) {
   .screen__footer--full .screen__footer-wrapper {
     opacity: 1;
   }
- }
+}
