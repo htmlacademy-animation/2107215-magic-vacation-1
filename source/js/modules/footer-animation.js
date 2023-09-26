@@ -54,7 +54,6 @@ export default class FooterAnimation {
           this.isRules = false;
           targetEl[0].style.display = `none`;
           this.rulesElements.style.display = `flex`;
-          this.rulesElements.style.background = `transparent`;
           this.rulesElements.style.zIndex = 5;
           setTimeout(()=>{
             this.rulesElements.style.display = null;
