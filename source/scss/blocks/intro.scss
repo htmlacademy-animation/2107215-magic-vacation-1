@@ -121,8 +121,6 @@
 
   p {
     margin: 0;
-    // opacity: 0;
-    // transform: translateY(80px);
     transform: translate3d(0, 50px, 0);
     opacity: 0;
   }
@@ -205,3 +203,22 @@
     height: 4.5rem;
   }
 }
+
+.intro__text > span {
+  transform: translate3d(0, 13rem, 0);
+}
+
+.intro__title.accent-typography--active .intro__text > span {
+  transform: translate3d(0, 0, 0);
+}
+
+.intro__text-date > span {
+  transform: translate3d(0, 2rem, 0);
+  opacity: 0;
+}
+
+.intro__date.accent-typography--active .intro__text-date > span {
+  transform: translate3d(0, 0.2rem, 0);
+  opacity: 1;
+}
+

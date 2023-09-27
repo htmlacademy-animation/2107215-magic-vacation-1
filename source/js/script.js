@@ -9,7 +9,6 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import screenLoad from './modules/screen-load';
 import screenAnimation from './modules/screen-animation';
-import textAnimation from './modules/text-animation';
 import story from './modules/story.js';
 import FooterAnimation from './modules/footer-animation.js';
 import rulesAnimation from './modules/rules-animation.js';
@@ -22,12 +21,13 @@ chat();
 result();
 form();
 social();
-textAnimation();
 story();
 rulesAnimation();
+screenAnimation();
 
 const footerAnimation = new FooterAnimation();
 const fullPageScroll = new FullPageScroll();
+
 fullPageScroll.init();
 footerAnimation.init();
 

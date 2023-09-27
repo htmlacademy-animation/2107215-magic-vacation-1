@@ -339,3 +339,11 @@
     }
   }
 }
+
+.prizes__text > span {
+  transform: translate3d(0, 13rem, 0);
+}
+
+.prizes__title.accent-typography--active .prizes__text > span {
+  transform: translate3d(0, 0, 0);
+}

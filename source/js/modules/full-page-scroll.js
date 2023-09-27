@@ -1,17 +1,22 @@
 import throttle from 'lodash/throttle';
+import AnimationsSwitcher from './page-animation-switch';
 
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 1000;
     this.scrollFlag = true;
     this.timeout = null;
+    this.prizesFlag = false;
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.animationElement = document.querySelector(`.animation-screen`);
+    this.screenOverlay = document.querySelector(`.screen-overlay`);
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
+    this.animationsSwitcher = new AnimationsSwitcher();
   }
 
   init() {
@@ -42,13 +47,40 @@ export default class FullPageScroll {
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
+    this.animationsSwitcher.setAnimation(this.screenElements[this.activeScreen].id);
     this.changePageDisplay();
   }
 
   changePageDisplay() {
+    this.ativatePageAnimation();
+    this.fillPageDisplay();
     this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
+  }
+
+  ativatePageAnimation() {
+    if (this.activeScreen === 0) {
+      this.animationElement.classList.add(`active`);
+    }
+
+    this.animationElement.classList.remove(`active`);
+  }
+
+  fillPageDisplay() {
+    if (this.activeScreen === 1) {
+      this.prizesFlag = true;
+    } else if (this.activeScreen !== 1 && this.activeScreen !== 2) {
+      this.prizesFlag = false;
+    }
+
+    if (this.prizesFlag) {
+      if (this.activeScreen === 2) {
+        this.screenOverlay.classList.add(`screen-overlay--active`);
+      } else {
+        this.screenOverlay.classList.remove(`screen-overlay--active`);
+      }
+    }
   }
 
   changeVisibilityDisplay() {
@@ -56,6 +88,7 @@ export default class FullPageScroll {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });
+
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);

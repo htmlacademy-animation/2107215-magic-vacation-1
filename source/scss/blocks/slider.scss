@@ -252,7 +252,6 @@
   }
 
   &.swiper-button-disabled {
-    // opacity: 0.5;
     pointer-events: none;
   }
 }
@@ -312,4 +311,18 @@
       background-color: $c-light;
     }
   }
+}
+
+// .slider__text {
+//   transform: translate3d(0, 13rem, 0);
+// }
+
+// .transform: translate3d(0);
+
+.slider__text > span {
+  transform: translate3d(0, 13rem, 0);
+}
+
+.slider__item-title.accent-typography--active .slider__text > span {
+  transform: translate3d(0, 0, 0);
 }
