@@ -65,7 +65,7 @@
   font-size: 2.4rem;
   line-height: 1.2;
 
-  .active & {
+  .active-rules & {
     & p {
       transform: translate3d(0, 0, 0);
       opacity: 1;
@@ -236,4 +236,12 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+}
+
+.rules__text > span {
+  transform: translate3d(0, 13rem, 0);
+}
+
+.rules__title.accent-typography--active .rules__text > span {
+  transform: translate3d(0, 0, 0);
 }

@@ -1,6 +1,6 @@
 @keyframes move-text {
   from {
-    transform: translate3d(80px, 0, 0);
+    transform: translate3d(40px, 0, 0);
     opacity: 0;
   }
 
@@ -10,15 +10,13 @@
   }
 }
 
-@keyframes move-text-date {
+@keyframes move-text-reverse {
   from {
-    transform: translate3d(0, 2rem, 0);
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
-    transform: translate3d(0, 0.2rem, 0);
-    opacity: 1;
+    opacity: 0;
   }
 }
 
@@ -32,17 +30,7 @@
   }
 }
 
-@keyframes move-text-span {
-  from {
-    transform: translate3d(0, 13rem, 0);
-  }
-
-  to {
-    transform: translate3d(0);
-  }
-}
-
-@keyframes color-form-btn {
+@keyframes change-color-form-btn {
   from {
     color: #ffffff;
   }
@@ -52,19 +40,7 @@
   }
 }
 
-@keyframes placeholder-animation {
-  from {
-    color: transparent;
-    opacity: 0;
-  }
-
-  to {
-    opacity: 0.5;
-    color: $c-dark;
-  }
-}
-
-@keyframes width-togle {
+@keyframes scale-width-togle {
   from {
     transform: scale(0.5);
   }
@@ -78,25 +54,27 @@
   }
 }
 
-@keyframes height-screen {
+@keyframes fill-screen {
   from {
     z-index: 6;
     height: 0;
   }
 
-  to {
+  100% {
     z-index: 6;
     height: 100vh;
   }
 }
 
-@keyframes height-index-screen {
-  from {
-    z-index: 6;
+@keyframes appear-footer-opacity {
+  0% {
+    background-color: #ffffff;
+    opacity: 0;
   }
 
-  to {
-    z-index: 3;
+  100% {
+    background-color: #ffffff;
+    opacity: 1;
   }
 }
 
@@ -185,7 +163,7 @@
   }
 }
 
-@keyframes result-flamingo {
+@keyframes show-result-flamingo {
   from {
     opacity: 0;
     transform-origin: 80vw -20%;
@@ -199,7 +177,7 @@
   }
 }
 
-@keyframes result-suitcase {
+@keyframes show-result-suitcase {
   from {
     transform-origin: 15vw 30vw;
     transform: scale(0);
@@ -210,7 +188,7 @@
   }
 }
 
-@keyframes result-leaf-right {
+@keyframes show-result-leaf-right {
   from {
     opacity: 0;
     transform-origin: -10vw bottom;
@@ -252,7 +230,7 @@
 }
 
 
-@keyframes result-leaf-left {
+@keyframes show-result-leaf-left {
   from {
     opacity: 0;
     transform-origin: 30vw bottom;
@@ -294,7 +272,7 @@
 }
 
 
-@keyframes result__image-leaf-green {
+@keyframes show-result-leaf-green {
   from {
     opacity: 0;
     transform-origin: -10vw bottom;
@@ -352,7 +330,7 @@
   }
 }
 
-@keyframes form-btn-result {
+@keyframes show-result-form-btn {
   0% {
     color: transparent;
     opacity: 0;
@@ -368,3 +346,117 @@
   }
 }
 
+@keyframes move-btn-story-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(9rem, 0, 0) rotate(190deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0) rotate(0);
+  }
+}
+
+@keyframes move-btn-story-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-9rem, 0, 0) rotate(-190deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0) rotate(0);
+  }
+}
+
+@keyframes appear-pagination {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes move-btn-result-to-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(8rem, 0, 0) rotate(80deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0) rotate(0);
+  }
+}
+
+@keyframes appear-btn-result-text {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-lead {
+  0% {
+    transform: translate3d(0, 2rem, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-down-footer {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 10rem, 0);
+  }
+}
+
+@keyframes fill-story {
+  0% {
+    opacity: 1;
+    z-index: 5;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+@keyframes show-prizes {
+  0% {
+    opacity: 1;
+    z-index: 7;
+    background: none;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 7;
+    background: none;
+  }
+}
+
+@keyframes hide-prizes-wrapper {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

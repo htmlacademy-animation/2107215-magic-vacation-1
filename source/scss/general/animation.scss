@@ -22,8 +22,12 @@
     transition: all 100ms cubic-bezier(0.36, 0.06, 0.12, 1.04) 100ms;
   }
 
-  .screen__footer {
-    transition: all 300ms cubic-bezier(0.36, 0.06, 0.12, 1.04);
+  .active-story {
+    animation: fill-story 0s ease 0.4s both;
+  }
+
+  .screen-overlay--active {
+    animation: fill-screen 0.4s ease;
   }
 
   .social-block__list li {
@@ -55,44 +59,60 @@
     transition: opacity 100ms cubic-bezier(0.09, 0.82, 0.44, 0.89) 300ms;
 
     &::before {
-      animation: width-togle 200ms 1 forwards cubic-bezier(0.14, 0.22, 0.29, 1.06) 300ms;
+      animation: scale-width-togle 200ms 1 forwards cubic-bezier(0.14, 0.22, 0.29, 1.06) 300ms;
     }
   }
 
-  .active {
-    & .swiper-slide-active {
-      & .slider__item-text {
-        animation: move-text 0.5s 1 forwards ease 200ms;
-      }
+  .slider__item-text:nth-child(odd) {
+    animation: move-text-reverse 0.1s 1 ease forwards;
+  }
+
+  .slider__item-text:nth-child(even) {
+    animation: move-text-reverse 0.1s 1 ease forwards;
+  }
+
+  .slider__item-text {
+    .swiper-slide-next & {
+      animation: move-text 0.6s 1 forwards ease 350ms;
     }
 
-    & .swiper-slide-next {
-      & .slider__item-text {
-        animation: move-text 0.5s 1 forwards ease 350ms;
-      }
+    .swiper-slide-active & {
+      animation: move-text 0.6s 1 forwards ease 200ms;
     }
   }
 
-  .form__field {
-    transition: all 400ms ease;
+  .screen--game.active .form__field {
+    transition: all 400ms ease 100ms;
 
     &::placeholder {
       transition: all 300ms ease 400ms;
     }
   }
 
-  .activate-form .form__field {
+  .screen:not(.screen--game.screen--hidden) {
+    transition: opacity 400ms ease, z-index 400ms ease;
+  }
+
+  .screen.screen--prizes {
+    transition: z-index 400ms ease 400ms;
+  }
+
+  .screen.screen--rules {
+    transition: z-index 400ms ease 400ms;
+  }
+
+  .screen--story:not(.screen--hidden) {
+    transition: opacity 400ms ease, z-index 500ms ease;
+  }
+
+  .screen--show .form__field {
     &::placeholder {
       transition: all 300ms ease 1150ms;
     }
   }
 
   .form__button {
-    animation: color-form-btn 300ms 1 forwards linear 400ms;
-  }
-
-  .screen-overlay--active {
-    animation: height-screen 0.4s ease forwards, height-index-screen 0.1s ease forwards 0.4s;
+    animation: change-color-form-btn 300ms 1 forwards linear 400ms;
   }
 
   .rules__item {
@@ -125,55 +145,141 @@
     animation: show-button-rules 0.3s ease-in-out both 1.2s;
   }
 
-  .rules__lead {
-    & p {
-      transition: all 300ms cubic-bezier(0.26, 0.77, 0.41, 0.94) 0.5s;
+  .active {
+    & .rules__lead,
+    & .prizes__lead {
+      p {
+        animation: move-lead 300ms cubic-bezier(0.26, 0.77, 0.41, 0.94) both 400ms;
+      }
+    }
+
+    & .slider__control--next {
+      animation: move-btn-story-right 400ms 1 both cubic-bezier(0.17, 0.67, 0.35, 0.91) 600ms;
+    }
+
+    & .slider__control--prev {
+      animation: move-btn-story-left 400ms 1 both cubic-bezier(0.17, 0.67, 0.35, 0.91) 600ms;
+    }
+
+    & .slider__pagination {
+      animation: appear-pagination 200ms 1 both ease-out 600ms;
     }
   }
 
-  .prizes__lead {
-    & p {
-      transition: all 350ms cubic-bezier(0.26, 0.77, 0.41, 0.94) 0.4s;
-    }
+  .screen .screen__wrapper {
+    transition: all 200ms cubic-bezier(0.26, 0.77, 0.41, 0.94) 0.1s;
   }
 
-  .result__image-flamingo {
+  .screen--show .result__image-flamingo {
     & img {
-      animation: result-flamingo 500ms cubic-bezier(0.28, 0.56, 0.05, 0.99) both 100ms, result__flamingo-move 2200ms ease-in infinite 500ms;
+      animation: show-result-flamingo 500ms cubic-bezier(0.28, 0.56, 0.05, 0.99) both 100ms,
+        result__flamingo-move 2200ms ease-in infinite 500ms;
     }
   }
 
-  .result__image-suitcase {
+  .screen--show .result__image-suitcase {
     & img {
-      animation: result-suitcase 600ms cubic-bezier(0.49, 0.06, 0.26, 0.94) both;
+      animation: show-result-suitcase 600ms cubic-bezier(0.49, 0.06, 0.26, 0.94) both;
     }
   }
 
-  .result__image-leaf-right {
+  .screen--show .result__image-leaf-right {
     & img {
-      animation: result-leaf-right 1900ms cubic-bezier(0.4, 0, 0.2, 1) both 150ms;
+      animation: show-result-leaf-right 1900ms cubic-bezier(0.4, 0, 0.2, 1) both 150ms;
     }
   }
 
-  .result__image-leaf-left {
+  .screen--show .result__image-leaf-left {
     & img {
-      animation: result-leaf-left 2100ms cubic-bezier(0.4, 0, 0.2, 1) both 150ms;
+      animation: show-result-leaf-left 2100ms cubic-bezier(0.4, 0, 0.2, 1) both 150ms;
     }
   }
 
-  .result__image-leaf-green {
+  .screen--show .result__image-leaf-green {
     & img {
-      animation: result__image-leaf-green 1900ms cubic-bezier(0.4, 0, 0.2, 1) both 450ms;
+      animation: show-result-leaf-green 1900ms cubic-bezier(0.4, 0, 0.2, 1) both 450ms;
     }
   }
 
-  .activate-form .form--result {
+  .screen--show .form--result {
     .form__field {
       transition: all 600ms ease 701ms, opacity 1ms ease 700ms;
     }
   }
 
-  .form--result .form__button {
-    animation: form-btn-result 300ms 1 both linear 600ms;
+  .screen--show {
+    & .result__button span {
+      animation: move-btn-result-to-left 500ms 1 both cubic-bezier(0.21, 0.7, 0.4, 0.91) 300ms;
+    }
+
+    & .result__button {
+      animation: appear-btn-result-text 600ms 1 both cubic-bezier(0.21, 0.7, 0.63, 0.57) 300ms;
+    }
+  }
+
+  .screen--show .form--result .form__button {
+    animation: show-result-form-btn 300ms 1 both linear 600ms;
+  }
+
+  .screen--rules.screen--hidden .screen__disclaimer {
+    animation: move-down-footer 200ms cubic-bezier(0.36, 0.06, 0.12, 1.04) both;
+  }
+
+  .active--footer {
+    animation: show-prizes 1s ease;
+
+    & .screen__wrapper {
+      animation: hide-prizes-wrapper 400ms ease;
+    }
+  }
+
+  @media (min-width: $mobile) and (orientation: landscape) {
+    .screen--intro .screen__footer {
+      transition: all 200ms cubic-bezier(0.36, 0.06, 0.12, 1.04);
+    }
+  }
+
+  .screen--prizes.active .screen__footer {
+    transition: transform 200ms cubic-bezier(0.36, 0.06, 0.12, 1.04);
+  }
+
+  .screen--prizes.screen--hidden {
+    & .screen__footer-note {
+      transition: opacity 500ms ease;
+    }
+  }
+
+  .screen--rules.screen--hidden {
+    & .disclaimer {
+      transition: transform 500ms ease;
+    }
+  }
+
+  .screen--rules.active {
+    & li {
+      transition: all 500ms ease 200ms;
+    }
+  }
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    .screen__footer {
+      transition: all 400ms ease 500ms;
+
+      &--full {
+        transition: all 500ms ease;
+      }
+
+      & .screen__footer-wrapper {
+        transition: all 200ms cubic-bezier(0.1, 0.65, 0.14, 0.99) 400ms;
+      }
+
+      & > button {
+        transition: all 200ms ease 100ms;
+      }
+
+      &--full > button {
+        transition: all 200ms ease;
+      }
+    }
   }
 }

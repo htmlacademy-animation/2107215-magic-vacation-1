@@ -3,19 +3,21 @@ export default class AccentTypographyBuild {
       elementSelector,
       timer,
       timingFunction,
+      classForActivate,
       classForText,
-      nameAnimation,
       timeOffset,
       offset
   ) {
     this._elementSelector = elementSelector;
     this._timer = timer;
-    this._nameAnimation = nameAnimation;
+    this._classForActivate = classForActivate;
     this._timingFunction = timingFunction;
     this._classForText = classForText;
     this._element = document.querySelector(this._elementSelector);
     this._timeOffset = timeOffset;
     this._offset = offset;
+
+    this.createText();
   }
 
   createElement(letter, index) {
@@ -32,16 +34,16 @@ export default class AccentTypographyBuild {
       currentOffset = this._timeOffset - this._offset;
     }
 
-    span.style.animation = `${this._nameAnimation} ${this._timer}ms both ${this._timingFunction} ${currentOffset}ms`;
+    span.style.transition = `all ${this._timer}ms ${this._timingFunction} ${currentOffset}ms`;
 
     return span;
   }
 
-  prePareText() {
+  createText() {
     if (!this._element) {
       return;
     }
-    const text = this._element.textContent.trim().split(` `).filter((latter)=>latter !== ``);
+    const text = this._element.textContent.trim().split(` `);
     const content = text.reduce((fragmentParent, word) => {
       const wordElement = Array.from(word).reduce((fragment, latter, index) => {
         fragment.appendChild(this.createElement(latter, index));
@@ -57,5 +59,17 @@ export default class AccentTypographyBuild {
 
     this._element.innerHTML = ``;
     this._element.appendChild(content);
+  }
+
+  runAnimation() {
+    if (!this._element) {
+      return;
+    }
+
+    this._element.classList.add(this._classForActivate);
+  }
+
+  destroyAnimation() {
+    this._element.classList.remove(this._classForActivate);
   }
 }

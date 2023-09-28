@@ -25,8 +25,85 @@
   border-radius: 50%;
   opacity: 0;
 
-  &:hover {
+  .active-slider-1 & {
     color: $c-purple;
+
+    &:focus {
+      color: $c-dark;
+
+      &::before {
+        border-color: $c-dark;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      &::before {
+        background-color: $c-dark;
+        border-color: $c-dark;
+      }
+    }
+  }
+
+  .active-slider-2 & {
+    color: $c-royal-blue;
+
+    &:focus {
+      color: $c-anakiwa;
+
+      &::before {
+        border-color: $c-anakiwa;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      &::before {
+        background-color: $c-anakiwa;
+        border-color: $c-anakiwa;
+      }
+    }
+  }
+
+  .active-slider-3 & {
+    color: $c-cornflower;
+
+    &:focus {
+      color: $c-royal-blue;
+
+      &::before {
+        border-color: $c-royal-blue;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      &::before {
+        background-color: $c-royal-blue;
+        border-color: $c-royal-blue;
+      }
+    }
+  }
+
+  .active-slider-4 &,
+  .active-slider & {
+    color: $c-dark;
+
+    &:focus {
+      color: $c-purple;
+
+      &::before {
+        border-color: $c-purple;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      &::before {
+        background-color: $c-purple;
+        border-color: $c-purple;
+      }
+    }
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -61,7 +138,22 @@
 
   &:hover,
   .social-block--active & {
-    color: $c-purple;
+    .active-slider-1 & {
+      color: $c-dark;
+    }
+
+    .active-slider-2 & {
+      color: $c-anakiwa;
+    }
+
+    .active-slider-3 & {
+      color: $c-royal-blue;
+    }
+
+    .active-slider-4 &,
+    .active-slider & {
+      color: $c-purple;
+    }
 
     &::before {
       position: absolute;
@@ -73,12 +165,7 @@
   }
 
   &:focus {
-    color: $c-purple;
     outline: none;
-
-    &::before {
-      border-color: $c-purple;
-    }
 
     & + .social-block__list {
       opacity: 1;
@@ -95,8 +182,6 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
     }
   }
 }
@@ -191,6 +276,71 @@
   border: 2px solid transparent;
   border-radius: 50%;
 
+  .active-slider-1 & {
+    &:hover {
+      color: $c-dark;
+    }
+
+    &:focus {
+      color: $c-dark;
+      border-color: $c-dark;
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-dark;
+    }
+  }
+
+  .active-slider-2 & {
+    &:hover {
+      color: $c-anakiwa;
+    }
+
+    &:focus {
+      color: $c-anakiwa;
+      border-color: $c-anakiwa;
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-anakiwa;
+    }
+  }
+
+  .active-slider-3 & {
+    &:hover {
+      color: $c-royal-blue;
+    }
+
+    &:focus {
+      color: $c-royal-blue;
+      border-color: $c-royal-blue;
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-royal-blue;
+    }
+  }
+
+  .active-slider &,
+  .active-slider-4 & {
+    &:hover {
+      color: $c-purple;
+    }
+
+    &:focus {
+      color: $c-purple;
+      border-color: $c-purple;
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-purple;
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     width: 40px;
     height: 40px;
@@ -206,20 +356,13 @@
     background-color: $c-dark;
   }
 
-  &:hover {
-    color: $c-purple;
-  }
-
   &:focus {
-    color: $c-purple;
     background-color: $c-light;
-    border-color: $c-purple;
     outline: none;
   }
 
   &:active,
   &:active:focus {
-    color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
   }

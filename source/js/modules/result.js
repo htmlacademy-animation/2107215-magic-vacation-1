@@ -5,7 +5,7 @@ export default () => {
     for (let i = 0; i < showResultEls.length; i++) {
       // Редактирование анимации
       // [].slice.call(results).forEach(function (el, index) {
-      //   if(index === 1) {
+      //   if(index === 2) {
       //     el.classList.remove(`screen--hidden`);
       //     el.classList.add(`screen--show`);
       //     setTimeout(() => el.classList.add(`activate-form`), 1 )
@@ -21,7 +21,6 @@ export default () => {
           return el.getAttribute(`id`) === target;
         });
         targetEl[0].classList.add(`screen--show`);
-        setTimeout(() => targetEl[0].classList.add(`activate-form`), 1);
         targetEl[0].classList.remove(`screen--hidden`);
       });
     }

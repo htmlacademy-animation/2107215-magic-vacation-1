@@ -121,3 +121,11 @@
   margin: 0 30px 30px;
   display: block;
 }
+
+.game__text > span {
+  transform: translate3d(0, 13rem, 0);
+}
+
+.game__title.accent-typography--active .game__text > span {
+  transform: translate3d(0, 0, 0);
+}
