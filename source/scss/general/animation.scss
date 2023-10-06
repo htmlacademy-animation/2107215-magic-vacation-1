@@ -261,6 +261,14 @@
     }
   }
 
+  .screen--prizes.active .prizes__primary-award-from {
+    animation: hide-primary-award-from 1s ease 2s both;
+  }
+
+  // .screen--prizes.active .prizes__primary-award-to {
+  //   animation: show-primary-award-to 1s ease  both;
+  // }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     .screen__footer {
       transition: all 400ms ease 500ms;

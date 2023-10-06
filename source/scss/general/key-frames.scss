@@ -464,3 +464,23 @@
     opacity: 0;
   }
 }
+
+// @keyframes show-primary-award-to {
+//   0% {
+//     opacity: 0;
+//   }
+
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+@keyframes hide-primary-award-from {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
