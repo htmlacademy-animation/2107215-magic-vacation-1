@@ -261,11 +261,11 @@
     }
   }
 
-  .screen--prizes.active .prizes__primary-award-from {
+  .active-animation .prizes__primary-award-from {
     animation: hide-primary-award-from 1s ease 2s both;
   }
 
-  // .screen--prizes.active .prizes__primary-award-to {
+  // .animate-prizes .prizes__primary-award-to {
   //   animation: show-primary-award-to 1s ease  both;
   // }
 

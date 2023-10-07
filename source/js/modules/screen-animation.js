@@ -1,44 +1,46 @@
-export default () => {
-  const menu = document.querySelector(`.js-menu`);
-  const screenOverlay = document.querySelector(`.screen-overlay`);
-  const screenPrizes = document.querySelector(`.screen--prizes`);
-  const screenStory = document.querySelector(`.screen--story`);
-  const dataStory = document.querySelector(`[data-href='story']`);
+export default class ScreenAnimation {
+  constructor() {
+    this.menu = document.querySelector(`.js-menu`);
+    this.screenOverlay = document.querySelector(`.screen-overlay`);
+    this.screenPrizes = document.querySelector(`.screen--prizes`);
+    this.screenStory = document.querySelector(`.screen--story`);
+    this.dataStory = document.querySelector(`[data-href='story']`);
+    this.isStory = false;
+    this.onMenuClick = this.onMenuClick.bind(this);
+  }
 
-  let isStory = false;
-
-  function setActiveFlag() {
-    if (dataStory.classList.contains(`active`)) {
-      isStory = true;
+  init() {
+    this.setActiveFlag();
+    if (this.screenOverlay && this.screenPrizes && this.menu) {
+      this.menu.addEventListener(`click`, this.onMenuClick);
     }
   }
 
-  function fillScreen() {
-    if (screenOverlay && screenPrizes && menu) {
-      menu.addEventListener(`click`, function (e) {
-        const dataHref = e.target.getAttribute(`data-href`);
-        if (dataHref === `story`) {
-          isStory = true;
-        }
-
-        if (dataHref !== `prizes` && dataHref !== `story`) {
-          isStory = false;
-        }
-
-        if (dataHref === `prizes`) {
-          if (isStory) {
-            screenPrizes.classList.add(`active--footer`);
-
-            screenStory.classList.add(`active-story`);
-          }
-        } else {
-          screenPrizes.classList.remove(`active--footer`);
-          screenStory.classList.remove(`active-story`);
-        }
-      });
+  setActiveFlag() {
+    if (this.dataStory.classList.contains(`active`)) {
+      this.isStory = true;
     }
   }
 
-  setActiveFlag();
-  fillScreen();
+  onMenuClick(e) {
+    const dataHref = e.target.getAttribute(`data-href`);
+    if (dataHref === `story`) {
+      this.isStory = true;
+    }
+
+    if (dataHref !== `prizes` && dataHref !== `story`) {
+      this.isStory = false;
+    }
+
+    if (dataHref === `prizes`) {
+      if (this.isStory) {
+        this.screenPrizes.classList.add(`active--footer`);
+
+        this.screenStory.classList.add(`active-story`);
+      }
+    } else {
+      this.screenPrizes.classList.remove(`active--footer`);
+      this.screenStory.classList.remove(`active-story`);
+    }
+  }
 };

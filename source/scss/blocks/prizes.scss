@@ -348,22 +348,26 @@
   transform: translate3d(0, 0, 0);
 }
 
-.screen--prizes.active {
-  & .prizes__primary-award-from,
-  & .prizes__primary-award-to {
-    display: block;
-  }
+.prizes__animation.active-animation {
+  opacity: 1;
+}
+
+.prizes__animation {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .prizes__primary-award-from,
 .prizes__primary-award-to {
-  display: none;
   position: absolute;
   top: 0;
   left: 50%;
   width: 100%;
   height: 100%;
-  z-index: 1;
   overflow: hidden;
   pointer-events: none;
 
