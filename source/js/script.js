@@ -7,11 +7,12 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
-import screenLoad from './modules/screen-load';
-import screenAnimation from './modules/screen-animation';
+import ScreenLoad from './modules/screen-load.js';
+import ScreenAnimation from './modules/screen-animation';
 import story from './modules/story.js';
 import FooterAnimation from './modules/footer-animation.js';
 import rulesAnimation from './modules/rules-animation.js';
+import PrizesAnimation from './modules/prizes-animation.js'
 
 // init modules
 mobileHeight();
@@ -23,15 +24,18 @@ form();
 social();
 story();
 rulesAnimation();
-screenAnimation();
 
 const footerAnimation = new FooterAnimation();
 const fullPageScroll = new FullPageScroll();
+const prizesAnimation = new PrizesAnimation();
+const screenAnimation = new ScreenAnimation();
+const screenload = new ScreenLoad();
 
 fullPageScroll.init();
 footerAnimation.init();
 
 window.addEventListener(`load`, () => {
-  screenLoad();
-  screenAnimation();
+  screenload.init();
+  screenAnimation.init();
+  prizesAnimation.init();
 });
